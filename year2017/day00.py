@@ -1,17 +1,16 @@
 from common import load_input
 
 PART1_DOC = """Part 1:
-What is the largest value in any register after completing the instructions in
-your puzzle input?
+
 """
 
 PART2_DOC = """Part 2:
 
 """
 
-input_data = load_input(__file__.split('.')[0] + '_in.txt')
 example = """
 """
+input_data = load_input(__file__.split('.')[0] + '_in.txt')
 
 fn_p1 = print
 print("Part 1 example:", fn_p1(example))
