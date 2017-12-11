@@ -10,7 +10,7 @@ PART2_DOC = """Part 2:
 
 example = """
 """
-input_data = load_input(__file__.split('.')[0] + '_in.txt')
+input_data = load_input(__file__.split('.')[0] + '_in.txt').strip()
 
 fn_p1 = print
 print("Part 1 example:", fn_p1(example))
