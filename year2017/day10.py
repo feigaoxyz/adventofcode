@@ -10,9 +10,6 @@ PART2_DOC = """Part 2:
 
 """
 
-example = "3, 4, 1, 5"
-input_data = load_input(__file__.split('.')[0] + '_in.txt')
-
 
 def knot_hash_one_round(lengths: list,
                         knot: list,
@@ -35,12 +32,6 @@ def knot_hash_one_round(lengths: list,
     return (knot, offset % list_len, skip_size % list_len)
 
 
-# fn_p1 = knot_hash_one_round
-# print("Part 1 example:", fn_p1([3, 4, 1, 5], list(range(5))))  # 12
-# knot, offset, _ = fn_p1(map(int, input_data.split(',')), None)
-# print("Part 1:", knot[offset] * knot[offset+1])  # 38628
-
-
 def knot_hash_full(data):
     rev_lens = list(map(ord, data.replace(' ', ''))) + [17, 31, 73, 47, 23]
     knot, offset, skip_size = list(range(256)), 0, 0
@@ -55,8 +46,21 @@ def knot_hash_full(data):
     return result
 
 
-fn_p2 = knot_hash_full
-print("Part 2 example:", fn_p2(""))
-print("Part 2 example:", fn_p2("1,2,3"))
-print("Part 2:", fn_p2(input_data.strip().replace(
-    ' ', '')))  # e1462100a34221a7f0906da15c1c979a
+def main():
+    example = "3, 4, 1, 5"
+    input_data = load_input(__file__.split('.')[0] + '_in.txt')
+
+    fn_p1 = knot_hash_one_round
+    print("Part 1 example:", fn_p1([3, 4, 1, 5], list(range(5))))  # 12
+    knot, offset, _ = fn_p1(map(int, input_data.split(',')), None)
+    print("Part 1:", knot[offset] * knot[offset + 1])  # 38628
+
+    fn_p2 = knot_hash_full
+    print("Part 2 example:", fn_p2(""))
+    print("Part 2 example:", fn_p2("1,2,3"))
+    print("Part 2:", fn_p2(input_data.strip().replace(
+        ' ', '')))  # e1462100a34221a7f0906da15c1c979a
+
+
+if __name__ == '__main__':
+    main()
