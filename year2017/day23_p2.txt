@@ -1,0 +1,49 @@
+b = 99
+c = b = 99
+if a goto L_5
+goto L_9
+
+L_5:
+(b *= 100,b += 100000)
+b = b * 100 + 100000
+(c = b,c += 17000)
+c = b + 17000
+
+L_9:
+f = 1
+d = 2
+
+L_11:
+e = 2
+
+L_12:
+(g = d g *= e g -= b)
+g = d * e - b
+
+if g goto L_17
+f = 0
+
+L_17:
+e += 1
+(g = e, g -= b)
+g = e - b
+
+if g goto L_12
+
+d += 1
+(g = d,g -= b)
+g = d - b
+
+if g goto L_11
+
+if f goto L_27
+h += 1
+
+L_27:
+(g = b,g -= c)
+g = b - c
+
+if g goto L_31
+goto L_33 (exit)
+L_31: b += 17
+goto L_9
