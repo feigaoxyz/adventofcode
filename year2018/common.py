@@ -6,10 +6,16 @@ Common functions
 def load_input(fn: str) -> str:
     """Loading downloaded input."""
     try:
-        with open(fn, 'r') as fp:
+        with open(fn, "r") as fp:
             return fp.read()
     except FileNotFoundError:
         print("File not exists.")
+
+
+def sorted2(kvs, key=None):
+    if key is None:
+        key = lambda x: x
+    return sorted(kvs, key=lambda p: key(p[1]))
 
 
 def validation(fn, input, expected):
@@ -18,8 +24,11 @@ def validation(fn, input, expected):
     if output == expected:
         return True
     else:
-        print('For input: {}; Output "{}" != Expected "{}"'.format(
-            input, output, expected))
+        print(
+            'For input: {}; Output "{}" != Expected "{}"'.format(
+                input, output, expected
+            )
+        )
         raise AssertionError
 
 

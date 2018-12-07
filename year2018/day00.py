@@ -16,13 +16,15 @@ def fn_p2(data):
 
 
 if __name__ == "__main__":
-    raw_data = """
-    """.strip()
-    data = preprocess(raw_data)
-    # print("Part 1 Example:", fn_p1(raw_data))
-    # print("Part 2 Example:", fn_p2(raw_data))
+    # raw_data = """
+    # """.strip()
+    # data = preprocess(raw_data)
+    # print("Part 1 Example:", fn_p1(data))
+    # print("Part 2 Example:", fn_p2(data))
 
-    raw_data = load_input(sys.argv[1]).strip()
+    raw_data = load_input(
+        sys.argv[1] if len(sys.argv) == 2 else (sys.argv[0].split(".")[0] + "_in.txt")
+    ).strip()
     data = preprocess(raw_data)
     print("Part 1:", fn_p1(data))  # answer:
     print("Part 2:", fn_p2(data))  # answer:
