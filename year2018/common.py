@@ -12,10 +12,26 @@ def load_input(fn: str) -> str:
         print("File not exists.")
 
 
+def identity_func(x):
+    return x
+
+
 def sorted2(kvs, key=None):
     if key is None:
-        key = lambda x: x
+        key = identity_func
     return sorted(kvs, key=lambda p: key(p[1]))
+
+
+def aggregateby(kvs, key=None):
+    if key is None:
+        key = identity_func
+    result = dict()
+    for k, v in kvs:
+        k2 = key(k)
+        if k2 not in result:
+            result[k2] = []
+        result[k2].append(v)
+    return result
 
 
 def validation(fn, input, expected):
