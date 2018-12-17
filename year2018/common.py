@@ -2,6 +2,8 @@
 Common functions
 """
 
+import re
+
 
 def load_input(fn: str) -> str:
     """Loading downloaded input."""
@@ -10,6 +12,10 @@ def load_input(fn: str) -> str:
             return fp.read()
     except FileNotFoundError:
         print("File not exists.")
+
+
+def line2ints(line, sp=None):
+    return list(map(int, line.split(sp)))
 
 
 def identity_func(x):
