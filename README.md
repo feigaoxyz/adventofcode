@@ -1,1 +1,1 @@
-Python practice of [Advent of Code](http://adventofcode.com)
+Practice of [Advent of Code](http://adventofcode.com)
