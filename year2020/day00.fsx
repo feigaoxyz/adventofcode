@@ -3,7 +3,7 @@ open Swensen.Unquote
 
 let path = $@"{__SOURCE_DIRECTORY__}/day00_in.txt"
 let inputLines = System.IO.File.ReadAllLines path
-let testLines = {  }
+let testLines : string list = []
 
 let preprocessing ss = ss
 
