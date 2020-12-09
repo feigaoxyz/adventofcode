@@ -29,13 +29,8 @@ let input = preprocessing inputLines
 
 let queryMap r c map = map.map.[r % map.row].[c % map.col]
 
-let lcm x y =
-    let rec gcd x y = if x % y = 0 then y else gcd y (x % y)
-    x * y / (gcd x y)
-
 // part 1
 let solve_p1 map right down =
-    // List.init (lcm map.row down) (fun i -> queryMap (down * i) (right * i) map )
     List.init (1 + map.row / down) (fun i -> queryMap (down * i) (right * i) map )
     |> List.filter (fun c -> c = '#')
     |> List.length
@@ -48,8 +43,8 @@ printfn "Part1: %A" (solve_p1 input 3 1)
 let solve_p2 input =
     [ (1, 1); (3, 1); (5, 1); (7, 1); (1, 2) ]
     |> Seq.map (fun (r, d) -> solve_p1 input r d)
-    |> Seq.reduce (fun x y -> x * y)
+    |> Seq.reduce (*)
 
 test <@ solve_p2 testInput = 336 @>
 
-printfn "Part2: %A" (solve_p2 input)
+printfn "Part2: %A" (solve_p2 input)  // 2106818610
