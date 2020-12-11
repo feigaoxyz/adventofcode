@@ -3,12 +3,16 @@ open Swensen.Unquote
 
 let path = $@"{__SOURCE_DIRECTORY__}/day00_in.txt"
 let inputLines = System.IO.File.ReadAllLines path
-let testLines : string list = []
+let testLines: string list = []
 
 let preprocessing ss = ss
 
 let testInput = preprocessing testLines
 let input = preprocessing inputLines
+
+// utilities
+let split (separator: string) (s: string) =
+    s.Split([| separator |], System.StringSplitOptions.RemoveEmptyEntries)
 
 // part 1
 let solve_p1 input = 42
