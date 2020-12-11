@@ -1,6 +1,9 @@
 #r "nuget: Unquote"
 open Swensen.Unquote
 
+#r "nuget: FSharp.Text.RegexProvider"
+open FSharp.Text.RegexProvider
+
 // utilities
 let split (separator: string) (s: string) =
     s.Split([| separator |], System.StringSplitOptions.RemoveEmptyEntries)
@@ -8,7 +11,7 @@ let split (separator: string) (s: string) =
 // inputs
 let path = $@"{__SOURCE_DIRECTORY__}/day00_in.txt"
 let inputLines = System.IO.File.ReadAllLines path
-let testLines: string list = []
+let testLines = "".Split "\n"
 
 let preprocessing ss = ss
 
@@ -19,11 +22,11 @@ let solve_p1 input = 42
 
 test <@ solve_p1 testInput = 42 @>
 
-printfn "Part1: %A" (solve_p1 input)
+printfn "Part1: %A" (solve_p1 input)  //
 
 // part 2
 let solve_p2 input = 42
 
 test <@ solve_p2 testInput = 42 @>
 
-printfn "Part2: %A" (solve_p2 input)
+printfn "Part2: %A" (solve_p2 input)  // 
