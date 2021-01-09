@@ -3,7 +3,7 @@ open Swensen.Unquote
 
 // utilities
 let split (separator: string) (s: string) =
-    s.Split([| separator |], System.StringSplitOptions.RemoveEmptyEntries)
+    s.Split([| separator |], System.StringSplitOptions.RemoveEmptyEntries) |> Seq.toList
 
 let getLines = split "\n"
 
