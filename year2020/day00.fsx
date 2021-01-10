@@ -9,7 +9,7 @@ let split (separator: string) (s: string) =
 let getLines = split "\n"
 
 // inputs
-let path = $"{__SOURCE_DIRECTORY__}/day00_in.txt"
+let path = $"{__SOURCE_DIRECTORY__}/day_in.txt"
 let inputRaw = System.IO.File.ReadAllText path
 let testRaw = """"""
 
