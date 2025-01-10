@@ -18,8 +18,9 @@ def preprocess(raw):
         data.append([int(v) for v in line.split()])
     return data
 
+
 def is_safe(line):
-    line_diff = [a-b for a, b in zip(line, line[1:])]
+    line_diff = [a - b for a, b in zip(line, line[1:])]
     return all(1 <= v <= 3 for v in line_diff) or all(-3 <= v <= -1 for v in line_diff)
 
 
@@ -34,12 +35,12 @@ def fn_p2(data):
             r += 1
         else:
             for e in range(len(line)):
-                ln = line[:e] + line[e+1:]
+                ln = line[:e] + line[e + 1 :]
                 assert len(ln) == len(line) - 1
                 if is_safe(ln):
                     r += 1
                     break
-                # print(line, e, ln)  
+                # print(line, e, ln)
     return r
 
 

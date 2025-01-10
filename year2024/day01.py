@@ -20,12 +20,11 @@ def preprocess(raw):
         a, b = map(int, l.split())
         left.append(a)
         right.append(b)
-        
+
     left.sort()
     right.sort()
 
     return left, right
-
 
 
 def fn_p1(data):
